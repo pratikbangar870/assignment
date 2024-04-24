@@ -7,7 +7,6 @@ import { getPageViewWrapperStyles } from '@upstox/styles';
 
 const PageViewWrapper = (props: PageViewWrapperPropsType) => {
   const { theme } = useTheme()!!;
-
   const styles = useMemo(() => getPageViewWrapperStyles(theme), [theme]);
 
   return (

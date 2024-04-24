@@ -35,7 +35,7 @@ const HoldingScreenUI = (props: HoldingScreenProps) => {
 
   return (
     <PageViewWrapper>
-      <View style={{ flex: 1 }}>
+      <View style={styles.flexOne}>
         <UpstoxHeaderComponent />
         {isInitialLoadingState ? (
           <ActivityIndicator

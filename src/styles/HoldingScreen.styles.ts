@@ -26,6 +26,9 @@ const getHoldingScreenStyles = (theme: ThemeType) => {
       paddingLeft: theme.spacings.spacing16,
       backgroundColor: theme.color.backgroundPrimary,
     },
+    flexOne: {
+      flex: 1,
+    },
   });
 };
 

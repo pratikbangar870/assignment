@@ -1,5 +1,6 @@
 export enum themeLight {
-  brandPrimary = '#7d3f98',
+  brandPrimary = '#6B006D',
+  brandSecondary = '#9D33D6',
   backgroundPrimary = '#f5f5f5',
   backgroundSecondary = '#B4B4B4',
   textPrimary = '#333333',
@@ -8,7 +9,8 @@ export enum themeLight {
 }
 
 export enum themeDark {
-  brandPrimary = '#7d3f98',
+  brandPrimary = '#6B006D',
+  brandSecondary = '#9D33D6',
   backgroundPrimary = '#333333',
   backgroundSecondary = '#848484',
   textPrimary = '#f5f5f5',

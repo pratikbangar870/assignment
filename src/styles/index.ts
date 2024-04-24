@@ -4,3 +4,4 @@ export { default as getHoldingScreenStyles } from './HoldingScreen.styles';
 export { default as getUpstoxHeaderStyles } from './UpstoxHeader.styles';
 export { default as getInvestmentKeyValueStyles } from './InvestmentKeyValue.styles';
 export { default as getInvestmentFooterStyles } from './InvestmentFooter.styles';
+export { default as getTriangleStyles } from './Triangle.styles';

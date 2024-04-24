@@ -1,8 +1,9 @@
 import { InvestmentFooterPropsType } from '@upstox/types';
 import React, { useMemo } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, Pressable, View } from 'react-native';
 import { InvestmentKeyValue } from '@upstox/components';
 import {
+  InvestmentFooterCopy,
   dayPLValue,
   netCurrentValue,
   netInvestmentValue,
@@ -10,6 +11,7 @@ import {
 } from '@upstox/utility';
 import { getInvestmentFooterStyles } from '@upstox/styles';
 import { useTheme } from '@upstox/styles-ds';
+import { Triangle } from '@upstox/components';
 
 const InvestmentFooter = (props: InvestmentFooterPropsType) => {
   const { holdings } = props;
@@ -26,23 +28,23 @@ const InvestmentFooter = (props: InvestmentFooterPropsType) => {
 
   const collapsedData = [
     {
-      label: 'Profit & Loss:',
-      value: `₹ ${netPL}`,
+      label: InvestmentFooterCopy.pnl,
+      value: InvestmentFooterCopy.value(netPL),
     },
   ];
 
   const expandedData = [
     {
-      label: 'Current Value:',
-      value: `₹ ${currentValue}`,
+      label: InvestmentFooterCopy.currentValue,
+      value: InvestmentFooterCopy.value(currentValue),
     },
     {
-      label: 'Total Investment:',
-      value: `₹ ${totalInvestment}`,
+      label: InvestmentFooterCopy.totalInvestment,
+      value: InvestmentFooterCopy.value(totalInvestment),
     },
     {
-      label: "Today's Profit & Loss:",
-      value: `₹ ${dayPL}`,
+      label: InvestmentFooterCopy.todayPL,
+      value: InvestmentFooterCopy.value(dayPL),
     },
   ];
 
@@ -50,6 +52,12 @@ const InvestmentFooter = (props: InvestmentFooterPropsType) => {
 
   return (
     <View style={styles.container}>
+      <Pressable onPress={() => setIsExpanded(value => !value)}>
+        <Triangle
+          customStyles={styles.centerAlign}
+          orientation={isExpanded ? 'down' : 'up'}
+        />
+      </Pressable>
       <FlatList
         data={isExpanded ? expandedData : []}
         renderItem={({ item }) => (

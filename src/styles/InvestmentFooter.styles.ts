@@ -5,10 +5,15 @@ const getInvestmentFooterStyles = (theme: ThemeType) => {
   return StyleSheet.create({
     container: {
       backgroundColor: theme.color.backgroundPrimary,
-      padding: theme.spacings.spacing16,
+      paddingHorizontal: theme.spacings.spacing16,
+      paddingTop: theme.spacings.spacing4,
+      paddingBottom: theme.spacings.spacing16,
     },
     divider: {
       marginVertical: theme.spacings.spacing8,
+    },
+    centerAlign: {
+      alignSelf: 'center',
     },
   });
 };
