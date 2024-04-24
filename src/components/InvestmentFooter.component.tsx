@@ -63,6 +63,7 @@ const InvestmentFooter = (props: InvestmentFooterPropsType) => {
         renderItem={({ item }) => (
           <InvestmentKeyValue label={item.label} value={item.value} />
         )}
+        scrollEnabled={false}
       />
       <View style={styles.divider} />
       <InvestmentKeyValue

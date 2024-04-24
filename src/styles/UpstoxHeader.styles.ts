@@ -8,7 +8,7 @@ const getUpstoxHeaderStyles = (theme: ThemeType) => {
       padding: theme.spacings.spacing16,
     },
     tvHeaderStyle: {
-      color: theme.color.backgroundPrimary,
+      color: theme.color.alwaysLight,
       fontSize: theme.typography.heading,
       fontWeight: 'bold',
     },

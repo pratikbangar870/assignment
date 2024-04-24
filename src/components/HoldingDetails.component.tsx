@@ -30,7 +30,7 @@ const HoldingDetails = (props: HoldingDetailsPropsType) => {
         <Text style={styles.tvQuantityStyle}>{quantity}</Text>
         <Text style={styles.tvPlLabelStyle}>{HoldingDetailsCopy.pl}</Text>
         <Text style={styles.tvPlValueStyle}>
-          {HoldingDetailsCopy.plValue(Number(calculatedPL))}
+          {HoldingDetailsCopy.plValue(calculatedPL)}
         </Text>
       </View>
     </View>

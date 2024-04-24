@@ -6,6 +6,7 @@ export enum themeLight {
   textPrimary = '#333333',
   textSecondary = '#666666',
   border = '#c9c7c5',
+  alwaysLight = '#f5f5f5',
 }
 
 export enum themeDark {
@@ -16,4 +17,5 @@ export enum themeDark {
   textPrimary = '#f5f5f5',
   textSecondary = '#cccccc',
   border = '#b5b3b1',
+  alwaysLight = '#f5f5f5',
 }
