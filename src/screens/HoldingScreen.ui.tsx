@@ -4,6 +4,7 @@ import {
   UpstoxHeaderComponent,
 } from '@upstox/components';
 import { ItemSeparatorComponent } from '@upstox/components';
+import InvestmentFooter from '@upstox/components/InvestmentFooter.component';
 import { getHoldingScreenStyles } from '@upstox/styles';
 import { useTheme } from '@upstox/styles-ds';
 import { HoldingScreenProps } from '@upstox/types';
@@ -34,40 +35,43 @@ const HoldingScreenUI = (props: HoldingScreenProps) => {
 
   return (
     <PageViewWrapper>
-      <UpstoxHeaderComponent />
-      {isInitialLoadingState ? (
-        <ActivityIndicator
-          size="large"
-          color={theme.color.brandPrimary}
-          style={styles.activityIndicatorStyle}
-        />
-      ) : (
-        <FlatList
-          data={holdingData}
-          renderItem={({ item }) => (
-            <View style={styles.holdingDetailViewStyle}>
-              <HoldingDetails
-                symbol={item.symbol}
-                quantity={item.quantity}
-                ltp={item.ltp}
-                avgPrice={item.avgPrice}
-                close={item.close}
+      <View style={{ flex: 1 }}>
+        <UpstoxHeaderComponent />
+        {isInitialLoadingState ? (
+          <ActivityIndicator
+            size="large"
+            color={theme.color.brandPrimary}
+            style={styles.activityIndicatorStyle}
+          />
+        ) : (
+          <FlatList
+            data={holdingData}
+            renderItem={({ item }) => (
+              <View style={styles.holdingDetailViewStyle}>
+                <HoldingDetails
+                  symbol={item.symbol}
+                  quantity={item.quantity}
+                  ltp={item.ltp}
+                  avgPrice={item.avgPrice}
+                  close={item.close}
+                />
+              </View>
+            )}
+            ItemSeparatorComponent={ItemSeparatorComponent}
+            keyExtractor={item => item.symbol}
+            refreshControl={
+              <RefreshControl
+                refreshing={refreshing}
+                onRefresh={fetchHoldingData}
+                colors={[theme.color.brandPrimary]}
+                tintColor={theme.color.brandPrimary}
               />
-            </View>
-          )}
-          ItemSeparatorComponent={ItemSeparatorComponent}
-          keyExtractor={item => item.symbol}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={fetchHoldingData}
-              colors={[theme.color.brandPrimary]}
-              tintColor={theme.color.brandPrimary}
-            />
-          }
-          ListEmptyComponent={emptyListMessage()}
-        />
-      )}
+            }
+            ListEmptyComponent={emptyListMessage()}
+          />
+        )}
+      </View>
+      <InvestmentFooter holdings={holdingData} />
     </PageViewWrapper>
   );
 };

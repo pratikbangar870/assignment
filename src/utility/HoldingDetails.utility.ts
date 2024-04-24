@@ -10,3 +10,55 @@ export const calculatedPLValue = (
   //   return pl;
   return Math.floor(pl) === pl ? pl : Number(pl.toFixed(precision));
 };
+
+export const netCurrentValue = (
+  holdings: HoldingDetailsType[],
+  precision: number = 2,
+) => {
+  return Number(
+    holdings
+      .reduce((accumulatedValue, holding) => {
+        return accumulatedValue + holding.quantity * holding.ltp;
+      }, 0)
+      .toFixed(precision),
+  );
+};
+
+export const netInvestmentValue = (
+  holdings: HoldingDetailsType[],
+  precision: number = 2,
+) => {
+  return Number(
+    holdings
+      .reduce((accumulatedValue, holding) => {
+        return accumulatedValue + holding.quantity * holding.avgPrice;
+      }, 0)
+      .toFixed(precision),
+  );
+};
+
+export const netPLValue = (
+  holdings: HoldingDetailsType[],
+  precision: number = 2,
+) => {
+  return Number(
+    (netCurrentValue(holdings) - netInvestmentValue(holdings)).toFixed(
+      precision,
+    ),
+  );
+};
+
+export const dayPLValue = (
+  holdings: HoldingDetailsType[],
+  precision: number = 2,
+) => {
+  return Number(
+    holdings
+      .reduce((accumulatedValue, holding) => {
+        return (
+          accumulatedValue + holding.quantity * (holding.close - holding.ltp)
+        );
+      }, 0)
+      .toFixed(precision),
+  );
+};
