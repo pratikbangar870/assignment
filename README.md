@@ -1,3 +1,12 @@
+
+| Light mode | Dark mode |
+| -------- | -------- |
+| ![Simulator Screenshot - iPhone 13 Pro - 2024-04-25 at 02 05 51](https://github.com/pratikbangar870/assignment/assets/143738382/f61c7dbc-45a2-44ba-ba3e-495b2c8ae82c) | ![Simulator Screenshot - iPhone 13 Pro - 2024-04-25 at 02 06 17](https://github.com/pratikbangar870/assignment/assets/143738382/d3054b47-94b5-456f-b4eb-a1f0bfccbc9e) |
+| ![Simulator Screenshot - iPhone 13 Pro - 2024-04-25 at 02 05 58](https://github.com/pratikbangar870/assignment/assets/143738382/5d2fe50a-2934-4778-8e9b-8e2ea1cfc9e5) | ![Simulator Screenshot - iPhone 13 Pro - 2024-04-25 at 02 06 20](https://github.com/pratikbangar870/assignment/assets/143738382/cf61ec69-1e1a-4268-8ded-f397e65ff98f) |
+
+-----------------
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
